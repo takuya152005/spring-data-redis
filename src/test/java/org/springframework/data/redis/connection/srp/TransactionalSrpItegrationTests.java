@@ -18,6 +18,7 @@ package org.springframework.data.redis.connection.srp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.AbstractTransactionalTestBase;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.srp.TransactionalSrpItegrationTests.SrpContextConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -32,7 +33,7 @@ public class TransactionalSrpItegrationTests extends AbstractTransactionalTestBa
 
 		@Override
 		@Bean
-		public SrpConnectionFactory redisConnectionFactory() {
+		public RedisConnectionFactory redisConnectionFactory() {
 
 			SrpConnectionFactory factory = new SrpConnectionFactory();
 			factory.setHostName("localhost");

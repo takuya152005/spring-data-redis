@@ -18,6 +18,7 @@ package org.springframework.data.redis.connection.lettuce;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.AbstractTransactionalTestBase;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.TransactionalLettuceItegrationTests.LettuceContextConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -32,7 +33,7 @@ public class TransactionalLettuceItegrationTests extends AbstractTransactionalTe
 
 		@Override
 		@Bean
-		public LettuceConnectionFactory redisConnectionFactory() {
+		public RedisConnectionFactory redisConnectionFactory() {
 
 			LettuceConnectionFactory factory = new LettuceConnectionFactory();
 			factory.setHostName("localhost");

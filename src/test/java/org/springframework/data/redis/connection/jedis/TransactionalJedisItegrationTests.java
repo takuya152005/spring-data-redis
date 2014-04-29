@@ -18,6 +18,7 @@ package org.springframework.data.redis.connection.jedis;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.AbstractTransactionalTestBase;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.TransactionalJedisItegrationTests.JedisContextConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -32,7 +33,7 @@ public class TransactionalJedisItegrationTests extends AbstractTransactionalTest
 
 		@Override
 		@Bean
-		public JedisConnectionFactory redisConnectionFactory() {
+		public RedisConnectionFactory redisConnectionFactory() {
 
 			JedisConnectionFactory factory = new JedisConnectionFactory();
 			factory.setHostName("localhost");
